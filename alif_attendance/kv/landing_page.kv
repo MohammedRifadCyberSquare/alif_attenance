@@ -1,0 +1,66 @@
+#:kivy 2.1.0
+ 
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDTextField kivymd.uix.textfield.MDTextField
+
+<LandingPage>:
+    name: 'landing'
+    FloatLayout:
+    
+        MDLabel:
+            id: date_label
+            size_hint: None, None
+            size: 200, 40
+            pos_hint: {'left': 1, 'y': 0.9} 
+            padding_x: 20 
+
+        Image:
+            source: 'assets/logo.png'   
+            size_hint: None, None
+            size: 200, 200
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7} 
+
+        MDLabel:
+            id: time_label
+            size_hint: None, None
+            size: 200, 40
+            pos_hint: {'right': 1, 'y': 0.9} 
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 2
+            size_hint: None, None
+            size: 500, 400   
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}   
+            
+
+            MDTextField:
+                id: username
+                hint_text: 'Username'
+                size_hint_y: None
+                height: 40
+                padding_x: 10
+
+            MDTextField:
+                id: password
+                hint_text: 'Password'
+                password: True
+                size_hint_y: None
+                height: 40
+                padding_x: 10
+
+            MDRaisedButton:
+                text: 'Login'
+                size_hint_y: None
+                height: 50
+                on_release: root.login() 
+
+         
+
+        MDRaisedButton:
+            text: "Attendance"
+            size_hint: None, None
+            size: 200, 40
+            pos_hint: {'right': 0.95, 'bottom': 0.5}  
+            md_bg_color: "red"
